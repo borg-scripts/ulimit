@@ -1,4 +1,0 @@
-ulimit
-======
-
-Manage limits.conf
