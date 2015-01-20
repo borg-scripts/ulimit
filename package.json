@@ -1,0 +1,15 @@
+{
+  "name": "ulimit",
+  "version": "0.0.1",
+  "publish": false,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPLv2",
+  "dependencies": {
+    "lodash": "^2.4.1"
+  }
+}
