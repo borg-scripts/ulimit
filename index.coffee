@@ -1,4 +1,3 @@
-_ = require 'lodash'
 module.exports = ->
   # required or else `su` won't load /etc/security/limits*
   # some ubuntu aws ami don't have it enabled by default
