@@ -7,12 +7,13 @@ module.exports = ->
     group: 'root'
     sudo: true
     mode: '0644'
-
-  for name, user of @server.ulimit?.users
-    @then @template [__dirname, 'templates', 'default', 'limits.conf'],
-      to: "/etc/security/limits.d/#{name}_limits.conf"
-      owner: 'root'
-      group: 'root'
-      sudo: true
-      mode: '0644'
-      variables: _.assign user, ulimit_user: name
+    
+  @then @inject_flow => # allow all @define to be evaluated before entering here
+    for name, user of @server.ulimit?.users
+      @then @template [__dirname, 'templates', 'default', 'limits.conf'],
+        to: "/etc/security/limits.d/#{name}_limits.conf"
+        owner: 'root'
+        group: 'root'
+        sudo: true
+        mode: '0644'
+        variables: _.assign user, ulimit_user: name
